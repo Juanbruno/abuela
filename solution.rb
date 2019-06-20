@@ -1,16 +1,17 @@
 require 'sinatra'
-require 'sinatra/reloader'
+require 'rubygems'
 
 get '/' do
-	erb :index
+	erb :sayIt
 end
 
-post '/' do
-	if params[:texto] == params[:texto].upcase
-		<<-HTML
-			<h1> Ahhh si, manzanas! </h1>
-		HTML
+get '/answer' do 
+	said = params[:say]
+	@str = ""
+	if said.match(said.upcase) == nil 
+		@str = "Habla mas duro mijito"
 	else
-		"<h1> Habla más duro mijito </h1>"
+		@str = "Ahhh si, manzanas!"
 	end
+	erb :answer
 end
