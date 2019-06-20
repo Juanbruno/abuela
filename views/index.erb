@@ -1,5 +1,12 @@
-<h1> Abuela Sorda </h1>
-<form action="/" method="post" >
+    <div class="container">
+  <h1>Abuela Sorda</h1>
+  <% if @abuela %>
+    <p>Mi Abuela dice: "<span id="abuela-dice"><%= @abuela %></span>"</p>
+  <% end %>
+<form action="/abuela" method="post" >
 	<input type="text" name="texto" />
 	<button type="submit">Dilo!</button>
 </form>
+
+
+</div>
