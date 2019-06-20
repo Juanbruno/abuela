@@ -9,7 +9,9 @@ end
 
 post '/abuela' do
   if params[:input_usuario] == params[:input_usuario].upcase
-    @abuela = "manzana"
+  @abuela =	<<-HTML
+		<h1> Ahhh si, manzanas! </h1>
+		HTML
   else
     @abuela = "Habla mas duro mijito"
   end
