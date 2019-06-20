@@ -1,20 +1,16 @@
-
 require 'sinatra'
+require 'sinatra/reloader'
 
 get '/' do
-  @abuela = params[:abuela]
-  
-  erb :index
+	erb :index
 end
 
-post '/abuela' do
-  if params[:input_usuario] == params[:input_usuario].upcase
-  @abuela =	<<-HTML
-		<h1> Ahhh si, manzanas! </h1>
+post '/' do
+	if params[:texto] == params[:texto].upcase
+		<<-HTML
+			<h1> Ahhh si, manzanas! </h1>
 		HTML
-  else
-    @abuela = "Habla mas duro mijito"
-  end
-  redirect "/?abuela=#{@abuela}"
+	else
+		"<h1> Habla más duro mijito </h1>"
+	end
 end
-
